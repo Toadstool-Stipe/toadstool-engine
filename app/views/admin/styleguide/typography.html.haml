@@ -46,7 +46,7 @@
 
   .markdown-content
     :markdown
-      #{File.new(File.join(Rails.root,'app/views/admin/styleguide/typography/ico-fonts.md')).read}
+      #{File.new(File.join(Toadstool.root,'app/views/admin/styleguide/typography/ico-fonts.md')).read}
 
   = html_example 'typography/ui_patterns/_ico_fonts'
   = scss_example 'typography/_ico-fonts'

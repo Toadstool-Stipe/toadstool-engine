@@ -1,4 +1,5 @@
-Toadstool::Application.routes.draw do
+# Toadstool::Application.routes.draw do
+Rails.application.routes.draw do 
   namespace :admin do
     ['color_palettes', 'forms', 'grids', 'typography', 'modules', 'patterns'].each do |action|
       get "/styleguide/#{action}" => "styleguide##{action}"

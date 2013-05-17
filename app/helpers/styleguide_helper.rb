@@ -31,7 +31,7 @@ module StyleguideHelper
   private
 
   def stylesheet(file, ext = '.sass')
-    File.join(Rails.root, 'app', 'assets', 'stylesheets', file + ext)
+    File.join(Toadstool.root, 'app', 'assets', 'stylesheets', file + ext)
   end
 
   def sass_file(style_path)
@@ -39,7 +39,7 @@ module StyleguideHelper
   end
 
   def haml_file(file_name, directory)
-    File.new(File.join(Rails.root, 'app', 'views', 'admin', 'styleguide', directory, file_name + '.html.haml'))
+    File.new(File.join(Toadstool.root, 'app', 'views', 'admin', 'styleguide', directory, file_name + '.html.haml'))
   end
 
   def file_hash(file)
@@ -47,6 +47,6 @@ module StyleguideHelper
   end
 
   def relative_path(file_path)
-    Pathname.new(file_path).relative_path_from(Rails.root).to_s
+    Pathname.new(file_path).relative_path_from(Toadstool.root).to_s
   end
 end
