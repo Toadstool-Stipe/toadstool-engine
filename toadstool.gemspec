@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   # Gem Bookkeeping
   s.rubygems_version = %q{1.3.6}
   s.add_dependency('rails', ['~> 3.2.13'])
-  # s.add_dependency("thor")
+  s.add_dependency("thor")
   # s.add_dependency("compass", [">= 0.12"])
   # s.add_dependency("sass", [">=3.2.1"])
   s.add_dependency("stipe", ["~> 0.0.5"])
