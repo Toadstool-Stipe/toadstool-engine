@@ -4,4 +4,4 @@
       %h4= category.display_name
       - category.files.each do |file|
         %ul
-          %li= link_to file.display_name, admin_styleguide_example_path(:example => file.slug)
+          %li= link_to file.display_name, styleguide_example_path(:example => file.slug)

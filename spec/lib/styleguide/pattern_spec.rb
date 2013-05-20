@@ -13,11 +13,11 @@ describe Styleguide::Pattern do
 
   describe 'partial' do
     it 'should provide the path to the partial relative to the views folder' do
-      simple.partial.should == 'admin/styleguide/ui_patterns/whatever'
+      simple.partial.should == 'styleguide/ui_patterns/whatever'
     end
 
     it 'should provide the correct path to the partial for nested modules' do
-      nested.partial.should == 'admin/styleguide/ui_patterns/nested/whatever'
+      nested.partial.should == 'styleguide/ui_patterns/nested/whatever'
     end
   end
 

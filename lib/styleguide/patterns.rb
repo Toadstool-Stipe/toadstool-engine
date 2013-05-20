@@ -1,7 +1,7 @@
 module Styleguide
   module Patterns
 
-    @@pattern_directory = File.join(Rails.root, 'app', 'views', 'admin', 'styleguide', 'ui_patterns')
+    @@pattern_directory = File.join(Rails.root, 'app', 'views', 'styleguide', 'ui_patterns')
     @@pattern_sass_directory = File.join(Rails.root, 'app', 'assets', 'stylesheets', 'ui_patterns')
 
     def self.directory

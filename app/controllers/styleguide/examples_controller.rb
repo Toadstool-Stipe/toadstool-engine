@@ -1,4 +1,4 @@
-class Admin::Styleguide::ExamplesController < Admin::AdminController
+class Styleguide::ExamplesController < ActionController::Base
 
   layout 'styleguide'
 

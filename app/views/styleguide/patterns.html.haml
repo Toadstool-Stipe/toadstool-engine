@@ -1,0 +1,8 @@
+%header.toadstool_header
+  %h1 Ui patterns
+
+= render :partial => 'styleguide/example_list', :locals => { :presenter => @presenter }
+
+.markdown-content
+  :markdown
+    #{File.new(File.join(Toadstool.root,'app/views/styleguide/ui_patterns/readme.md')).read}

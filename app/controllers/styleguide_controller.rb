@@ -1,4 +1,4 @@
-class Admin::StyleguideController < Admin::AdminController
+class StyleguideController < ActionController::Base
   layout 'styleguide'
 
   def typography

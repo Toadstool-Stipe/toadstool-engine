@@ -2,8 +2,8 @@
 
 Create the following files/directories 
 
-1. Create `app/views/admin/styleguide/ui_patterns/foo/_bar.html.haml`
-1. Create `app/views/admin/styleguide/ui_patterns/foo/readme.md`
+1. Create `app/views/styleguide/ui_patterns/foo/_bar.html.haml`
+1. Create `app/views/styleguide/ui_patterns/foo/readme.md`
 1. Create `app/assets/stylesheets/ui_patterns/foo/bar/_bar.sass`
 	1. Create `.../ui_patterns/foo/bar/_extends.sass`
 	1. Create `.../ui_patterns/foo/bar/_mixins.scss` 

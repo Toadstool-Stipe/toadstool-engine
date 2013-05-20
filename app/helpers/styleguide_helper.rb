@@ -16,16 +16,16 @@ module StyleguideHelper
 
   def html_example(file_name, directory = '')
     file = haml_file(file_name, directory)
-    render :partial => 'admin/styleguide/html_example', :locals => file_hash(file)
+    render :partial => 'styleguide/html_example', :locals => file_hash(file)
   end
 
   def code_toggle(file)
-    render :partial => 'admin/styleguide/code_toggle', :locals => file_hash(file)
+    render :partial => 'styleguide/code_toggle', :locals => file_hash(file)
   end
 
   def example_file(file_name)
     file = File.new(file_name)
-    render :partial => 'admin/styleguide/module_example', :locals => file_hash(file)
+    render :partial => 'styleguide/module_example', :locals => file_hash(file)
   end
 
   private
@@ -39,7 +39,7 @@ module StyleguideHelper
   end
 
   def haml_file(file_name, directory)
-    File.new(File.join(Toadstool.root, 'app', 'views', 'admin', 'styleguide', directory, file_name + '.html.haml'))
+    File.new(File.join(Toadstool.root, 'app', 'views', 'styleguide', directory, file_name + '.html.haml'))
   end
 
   def file_hash(file)

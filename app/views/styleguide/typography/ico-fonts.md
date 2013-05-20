@@ -11,7 +11,7 @@ See following instruction to add/edit/delete icons to the icon-font library.
 	1. new `.json` file
 1. Place newly generated font libraries into `/public/fonts` 
 1. Place newly generated `.json` file in `/app/assets/stylesheets/typography/` 
-1. Open `app/views/admin/styleguide/ui_patterns/typography/_ico_fonts.html.haml` and add new names values to `icons` variable list
+1. Open `app/views/styleguide/ui_patterns/typography/_ico_fonts.html.haml` and add new names values to `icons` variable list
 1. Open `app/assets/stylesheets/typography/_ico-fonts.scss` and add new name PUA to `$icons` variable list
 1. __profit__
 
