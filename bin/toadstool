@@ -1,0 +1,85 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require "rubygems"
+require "thor"
+require "thor/group"
+require 'pathname'
+
+APP_PATH = File.expand_path(File.join(__FILE__, '../../templates'))
+
+module Toadstool
+  class Generator < Thor
+    def self.source_root
+      APP_PATH
+    end
+
+    include Thor::Actions
+    argument :truffle
+    argument :oil
+
+    desc 'ts_module', "Generate a module"
+    def ts_module
+      directory "module/views", "views/modules/#{truffle}"
+      directory "module/sass", "sass/modules/#{truffle}"
+
+      append_file 'sass/_modules.scss', "@import 'modules/#{truffle}/#{oil}/#{oil}'"
+    end
+
+    desc 'pattern', "Generate a module"
+    def pattern
+      directory "pattern/views", "views/ui_patterns/#{truffle}"
+      directory "pattern/sass", "sass/ui_patterns/#{truffle}"
+
+      append_file 'sass/_ui_patterns.scss', "@import 'ui_patterns/#{truffle}/#{oil}/#{oil}'"
+    end
+
+    no_tasks do
+      def shiitake
+        "#{oil}"
+      end
+    end
+
+    map 'module' => 'ts_module'
+  end
+end
+
+
+
+
+ARGV << '--help' if ARGV.empty?
+
+aliases = {
+  "i"  => "install",
+  "new"  => "install",
+  "g"  => "generate"
+}
+
+
+help_message = <<-EOT
+Usage: toadstool COMMAND [ARGS]
+
+The most common toadstool commands are:
+  generate (module|pattern) CATEGORY NAME     Generate a new module or pattern
+                                              "generate module sign-in form" would
+                                              create style and markup files such as:
+                                              sass/modules/sign-in/form/_mixins.sass
+                                              and views/modules/sign-in/_form.html
+EOT
+
+command = ARGV.shift
+command = aliases[command] || command
+
+case command
+# when 'install'
+#   Toadstool::Install.start
+when 'generate'
+  Toadstool::Generator.start
+else
+  puts "Error: Command '#{command}' not recognized"
+  if %x{rake #{command} --dry-run 2>&1 } && $?.success?
+    puts "Did you mean: `$ rake #{command}` ?\n\n"
+  end
+  puts help_message
+  exit(1)
+end

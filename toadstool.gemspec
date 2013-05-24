@@ -17,9 +17,9 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/Anotheruiguy/toadstool"
 
   # Gem Files
-  s.bindir      = 'lib/bin'
+  # s.bindir      = 'lib/bin'
   
-  s.files = Dir["{app,lib,vendor/assets}/**/*"] + ["Rakefile"]
+  s.files = Dir["{app,lib,vendor/assets}/**/*"] + ["Rakefile"] + ["config/application.rb", 'config/routes.rb']
   
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   # s.executables        = ['toadstool']
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   # s.add_dependency("compass", [">= 0.12"])
   # s.add_dependency("sass", [">=3.2.1"])
   s.add_dependency("stipe", ["~> 0.0.5"])
-    s.add_dependency("haml-rails")
-    s.add_dependency('rdiscount', ["~> 1.6.8"])
+  s.add_dependency("haml-rails")
+  s.add_dependency('rdiscount', ["~> 1.6.8"])
   
 end

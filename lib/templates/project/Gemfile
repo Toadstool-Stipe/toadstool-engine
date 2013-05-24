@@ -1,0 +1,8 @@
+source 'http://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-partial'
+gem 'sass'
+gem 'compass'
+gem 'stipe'
+gem 'toadstool'
