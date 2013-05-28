@@ -50,8 +50,6 @@ end
 ARGV << '--help' if ARGV.empty?
 
 aliases = {
-  "i"  => "install",
-  "new"  => "install",
   "g"  => "generate"
 }
 
@@ -71,8 +69,6 @@ command = ARGV.shift
 command = aliases[command] || command
 
 case command
-# when 'install'
-#   Toadstool::Install.start
 when 'generate'
   Toadstool::Generator.start
 else
