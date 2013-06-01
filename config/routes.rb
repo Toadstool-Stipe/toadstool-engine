@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
     get '/' => 'styleguide#typography'
 
-    get '/examples/*example' => 'styleguide/examples#show', :as  => :styleguide_example
+    get '/examples/*example' => 'styleguide/examples#show', :as  => :examples
   end
 end
 
