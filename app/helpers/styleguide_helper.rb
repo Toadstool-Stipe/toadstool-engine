@@ -39,7 +39,8 @@ module StyleguideHelper
   end
 
   def haml_file(file_name, directory)
-    File.new(File.join(Toadstool.root, 'app', 'views', 'styleguide', directory, file_name + '.html.haml'))
+    # File.new(File.join(Toadstool.root, 'app', 'views', 'styleguide', directory, file_name + '.erb'))
+    File.new(Dir.glob(File.join(Toadstool.root, 'app', 'views', 'styleguide', directory, file_name + '.html.{haml,erb,slim}')).first)
   end
 
   def file_hash(file)
