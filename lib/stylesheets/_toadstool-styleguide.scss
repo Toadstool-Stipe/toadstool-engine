@@ -1,0 +1,27 @@
+// App Config - this is where most of your magic will happen
+// ------------------------------------------------------------------------------
+@import "toadstool/config";  // Editing defaults here will override any set in the Stipe gem
+
+
+// Want web fonts? We got those too.
+// ------------------------------------------------------------------------------
+@import "toadstool/web_fonts";
+
+
+
+// Following sequence will load the necessary Stipe libraries
+// ------------------------------------------------------------------------------
+@import "stipe/manifest";
+@import "stipe/grid/extends";
+               
+
+
+// This where you start building your own styles. 
+// ------------------------------------------------------------------------------
+@import "toadstool/typography";
+@import "toadstool/design";
+@import "toadstool/forms";
+@import "toadstool/buttons";
+@import "toadstool/grids";
+@import "toadstool/ui_patterns";
+@import "toadstool/modules";
