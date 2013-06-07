@@ -1,0 +1,61 @@
+.example_code {
+  @include grid(12);  
+  @include border_radius(em(5));
+
+  background: $bravo_gray;
+  padding: 2.75em em(10) 0 em(10);
+  margin-bottom: em(20);
+  line-height: 1.5em;
+  position: relative;
+
+  @media #{$tablet_portrait} {
+    @include grid(10, $grid_context: 10);
+    padding-right: em(10);
+  }
+
+  @media #{$mobile} {
+    @include grid(4, $grid_context: 4);
+    padding-right: em(10);
+  }
+
+  p {
+    color: $fox_gray;
+    float: right;
+    margin: 0 em(10) em(10) 0;
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    @media #{$mobile} {
+      margin-right: 0;
+      font-size: 1em;
+    }
+  }
+  .codeToggle {
+    position: absolute;
+    top: 0.25em;
+    right: 0;
+  }
+  .mtime {
+    display: block;
+    width: 100%;
+    font-size: 0.9em;
+    text-align: right;
+  }
+  [contenteditable] {
+    margin-bottom: em(10);
+    padding-left: em(10);
+    cursor: pointer;
+    &:focus {
+      outline: 1px solid green;
+    }
+    ::selection {
+      color: inherit;
+      background: transparentize(blue, 0.7);
+    }
+  }
+}
+
+.instructional_example {
+  @extend .example_code;
+  background: transparent;
+}
+
