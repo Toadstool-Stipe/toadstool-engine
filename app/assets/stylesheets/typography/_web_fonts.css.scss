@@ -22,17 +22,7 @@ $webfont_directory: "/fonts/" !default; // edit this directory in the '_config.s
 //	@include font-face ($font_family: [name of family], $font-file:  [name of file], $font_weight: [value], $font_style: [value]);
 //}
 
-@font-face {
-  @include font-face ($font_family: 'Proxima Nova', $font-file: 'proximanova-regular-webfont');
-}
 
-@font-face {
-  @include font-face ($font_family: 'Trade Gothic', $font-file: 'trade_gothic_bold_condensed_no._20-webfont');
-}
-
-@font-face {
-  @include font-face ($font_family: 'substantial-ico-fonts', $font-file: 'substantial-ico-fonts');
-}
 
 
 // Install google fonts
