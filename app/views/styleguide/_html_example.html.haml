@@ -1,3 +1,4 @@
 %article.element_example
-  = Haml::Engine.new(content).render
+  != content
+
 = render :partial => 'styleguide/code_toggle', :locals => { :content => content, :path => path, :mtime => mtime}

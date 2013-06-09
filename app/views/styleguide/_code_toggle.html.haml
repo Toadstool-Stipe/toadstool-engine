@@ -1,8 +1,7 @@
 .example_code
   %p.codeToggle
-    %a{:href => "#"} view
+    %a{:href => "#"}= path
   %pre.prettyprint.linenums.hidden{:contenteditable => true}
-    != content
-  %p= path
+    &= content
   %p.mtime
     Last modified: #{mtime}

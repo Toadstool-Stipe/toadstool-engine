@@ -10,16 +10,17 @@ module Styleguide
     end
 
     def display_name
-      friendly_name.humanize
+      friendly_name.humanize.strip
     end
 
     def friendly_name
       file_name.to_s.match(/([[:alnum:]_-]+)/)[0].to_s
+      # file_name.to_s.match(/_([a-zA-Z0-9_-]*)\..*/)[1]
     end
 
     def partial
       path = @full_path.relative_path_from(Pathname.new(views_folder))
-      File.join(path.dirname, friendly_name)
+      File.join(path.dirname, file_name)
     end
 
     def sass_path
@@ -46,8 +47,8 @@ module Styleguide
 
     private
 
-    def views_folder
-      File.join(Rails.root, 'app', 'views')
-    end
+      def views_folder
+        File.join(Rails.root, 'app', 'views')
+      end
   end
 end
