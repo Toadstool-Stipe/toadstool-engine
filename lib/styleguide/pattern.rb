@@ -7,7 +7,7 @@ module Styleguide
     end
 
     def partial
-      @full_path
+      "ui_patterns/#{relative_to_root}".match(/([\/[:alnum:]_-]+)/)[0].to_s
     end
 
 

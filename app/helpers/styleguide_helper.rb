@@ -42,7 +42,12 @@ module StyleguideHelper
     end
 
     def file_hash(file)
-      { :content => render(:file => file.path), :mtime => file.mtime, :path => relative_path(file.path) }
+      { 
+        :content => file.read.gsub(/\t/, '  '), 
+        :rendered_content => render(:file => file.path), 
+        :mtime => file.mtime, 
+        :path => relative_path(file.path)
+      }
     end
 
     def relative_path(file_path)

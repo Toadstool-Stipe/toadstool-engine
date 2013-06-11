@@ -1,6 +1,6 @@
 module Styleguide
   module Modules
-    @@module_directory = File.join(Rails.root, 'app', 'views', 'application', 'modules')
+    @@module_directory = File.join(Toadstool.root, 'app', 'views', 'styleguide', 'modules')
     @@module_sass_directory = File.join(Toadstool.root, 'app', 'assets', 'stylesheets', 'modules')
 
     def self.directory

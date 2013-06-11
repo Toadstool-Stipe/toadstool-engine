@@ -18,10 +18,10 @@ module Styleguide
       # file_name.to_s.match(/_([a-zA-Z0-9_-]*)\..*/)[1]
     end
 
-    def partial
-      path = @full_path.relative_path_from(Pathname.new(views_folder))
-      File.join(path.dirname, file_name)
-    end
+    # def partial
+    #   path = @full_path.relative_path_from(Pathname.new(views_folder))
+    #   File.join(path.dirname, friendly_name)
+    # end
 
     def sass_path
       Dir.glob(File.join(@sass_directory , relative_to_root.dirname,  friendly_name, '*.{sass,scss}'))

@@ -8,9 +8,9 @@ module Styleguide
 
 
 
-      def partial
-        @full_path
-      end
+    def partial
+      "modules/#{relative_to_root}".match(/([\/[:alnum:]_-]+)/)[0].to_s
+    end
 
     def slug
       "#{relative_to_root}.module"
