@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
-gem 'pg'
 gem 'haml-rails'
-gem 'stipe', :require => 'stipe'
+gem 'stipe'
 gem 'rdiscount', '1.6.8'
 
 group :assets do
