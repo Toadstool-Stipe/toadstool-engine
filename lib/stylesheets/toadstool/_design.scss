@@ -36,21 +36,23 @@
 }
 
 .styleguide_main_content {
-	@include full_width_block(12);
+	@include full_width_block($grid_type);
 	
 	.styleguide_article, .element_example {
-		@include grid(12.25, alphaomega, $grid_align: center, $grid_uom: em);
+    @include grid($grid_type + .25, alphaomega, $grid_align: center);
+		
+		max-width: em($grid_max_width);
 		
 		@media #{$tablet_portrait} {
-		 @include grid(12.25, alphaomega, $grid_align: center);
+
 		}
 		
 		@media #{$mobile} {
-		 @include grid(12.25, alphaomega, $grid_align: center);
+
 		}
 		
 		.toadstool_header, .toadstool_subheader {
-			@include grid(12);
+      // @include grid(12);
 			@media #{$mobile} {
 			 @include grid(4, $grid_context: 4);
 			}
@@ -67,7 +69,14 @@
 	.element_example {
 		margin-bottom: em(20);
 		float: left;
-		background-image: url(data:image/gif;base64,R0lGODlhUAABAIAAAP/////l5SwAAAAAUAABAAACC4SPocvtD6NsqIICADs=);
+		
+		@if $grid_type == 12 {
+		  background-image: url(data:image/gif;base64,R0lGODlhUAABAIAAAP/////l5SwAAAAAUAABAAACC4SPocvtD6NsqIICADs=);
+		}
+		@else if $grid_type == 24 {
+		  background-image: url(data:image/gif;base64,R0lGODlhKAABAIAAAP/////l5SH5BAAAAAAALAAAAAAoAAEAAAIIhB2py+15TAEAOw==);
+		}		
+		
 		&.col_24_grid {
   		background-image: url(data:image/gif;base64,R0lGODlhKAABAIAAAP/////l5SH5BAAAAAAALAAAAAAoAAEAAAIIhB2py+15TAEAOw==);
 		}
@@ -87,4 +96,10 @@
 code {
 	padding: em(2) em(5);
 	background: $charlie_color_hotel;
+}
+
+.toadstool_grids {
+  ul {
+    clear: both;
+  }
 }

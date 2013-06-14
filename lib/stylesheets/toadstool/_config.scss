@@ -78,7 +78,8 @@ $heading_font_family: #{"Helvetica Neue", Arial, sans-serif} !default;
 // $grid_align:                 default !default;        // by default grids float left. Optional argument is ``center``
 // $col_base:                   10 !default;             // equal to 10px in the standard 960.gs
 // $col_gutter:                 $col_base * 2 !default;  // sets default grid gutter width                            
-// $grid_960:                   960 / 100% !default;     // grid math for percentages
+$grid_max_width:             960;
+$grid_960:                   $grid_max_width / 100% !default;     // grid math for percentages
 
 
 
