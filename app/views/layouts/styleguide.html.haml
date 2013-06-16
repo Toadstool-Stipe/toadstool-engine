@@ -19,12 +19,12 @@
 
       %nav.toadstool_nav.mobi_hidden
         %ol
-          %li= link_to_unless_current 'Typography', styleguide_typography_path
-          %li= link_to_unless_current 'Grids', styleguide_grids_path
-          %li= link_to_unless_current 'Color palettes', styleguide_color_palettes_path
-          %li= link_to_unless_current 'Forms', styleguide_forms_path
-          %li= link_to_unless_current 'UI Patterns', styleguide_patterns_path
-          %li= link_to_unless_current 'Modules', styleguide_modules_path
+          %li= link_to_unless_current 'Typography', toadstool.typography_path
+          %li= link_to_unless_current 'Grids', toadstool.grids_path
+          %li= link_to_unless_current 'Color palettes', toadstool.color_palettes_path
+          %li= link_to_unless_current 'Forms', toadstool.forms_path
+          %li= link_to_unless_current 'UI Patterns', toadstool.patterns_path
+          %li= link_to_unless_current 'Modules', toadstool.modules_path
 
       %article.styleguide_article
         = yield

@@ -9,13 +9,10 @@ module Toadstool
   end
   
   
-  # module Rails
-    class Engine < ::Rails::Engine
-      config.autoload_paths += Dir["#{Toadstool.root}/lib/**/"]
 
-      # paths['app/views']         << "../app/views"
-            # puts paths
+  class Engine < ::Rails::Engine
+    isolate_namespace Toadstool
+    config.autoload_paths += Dir["#{Toadstool.root}/lib/**/"]
+  end
 
-    end
-  # end
 end
