@@ -12,7 +12,7 @@ module StyleguideHelper
 
 
   def html_example(file_name)
-    file = File.new(file_name)
+    file = File.new(Dir.glob(File.join(Toadstool.root, 'app', 'views', 'styleguide', file_name + '.html.{haml,erb,slim}')).first)
     render :partial => 'styleguide/html_example', :locals => file_hash(file)
   end
   
@@ -42,7 +42,7 @@ module StyleguideHelper
     end
 
     def file_hash(file)
-      { :content => file.read(), :mtime => file.mtime, :path => relative_path(file.path) }
+      { :content => render(:file => file.path), :mtime => file.mtime, :path => relative_path(file.path) }
     end
 
     def relative_path(file_path)
